@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D45412621E84C49E002B8D46 /* Ipaynow.m in Sources */ = {isa = PBXBuildFile; fileRef = D45412611E84C49E002B8D46 /* Ipaynow.m */; };
+		D45412631E84C49E002B8D46 /* Ipaynow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D45412601E84C49E002B8D46 /* Ipaynow.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D454125B1E84C49E002B8D46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				D45412631E84C49E002B8D46 /* Ipaynow.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D454125D1E84C49E002B8D46 /* libIpaynow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIpaynow.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45412601E84C49E002B8D46 /* Ipaynow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ipaynow.h; sourceTree = "<group>"; };
+		D45412611E84C49E002B8D46 /* Ipaynow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ipaynow.m; sourceTree = "<group>"; };
+		D45412771E84C5A6002B8D46 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		D45412781E84C5A6002B8D46 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		D454127A1E84C5B0002B8D46 /* ipaynow.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ipaynow.bundle; sourceTree = "<group>"; };
+		D454127B1E84C5B0002B8D46 /* IpaynowPluginApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IpaynowPluginApi.h; sourceTree = "<group>"; };
+		D454127C1E84C5B0002B8D46 /* IpaynowPluginDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IpaynowPluginDelegate.h; sourceTree = "<group>"; };
+		D454127D1E84C5B0002B8D46 /* IPNDESUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPNDESUtil.h; sourceTree = "<group>"; };
+		D454127E1E84C5B0002B8D46 /* IPNPreSignMessageUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPNPreSignMessageUtil.h; sourceTree = "<group>"; };
+		D454127F1E84C5B0002B8D46 /* libIPaynowPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libIPaynowPlugin.a; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D454125A1E84C49E002B8D46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D45412541E84C49E002B8D46 = {
+			isa = PBXGroup;
+			children = (
+				D454125F1E84C49E002B8D46 /* Ipaynow */,
+				D454125E1E84C49E002B8D46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D454125E1E84C49E002B8D46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D454125D1E84C49E002B8D46 /* libIpaynow.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D454125F1E84C49E002B8D46 /* Ipaynow */ = {
+			isa = PBXGroup;
+			children = (
+				D45412791E84C5B0002B8D46 /* IpaynowPlugin */,
+				D45412761E84C5A6002B8D46 /* AliPayPlugin */,
+				D45412601E84C49E002B8D46 /* Ipaynow.h */,
+				D45412611E84C49E002B8D46 /* Ipaynow.m */,
+			);
+			path = Ipaynow;
+			sourceTree = "<group>";
+		};
+		D45412761E84C5A6002B8D46 /* AliPayPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D45412771E84C5A6002B8D46 /* AlipaySDK.bundle */,
+				D45412781E84C5A6002B8D46 /* AlipaySDK.framework */,
+			);
+			path = AliPayPlugin;
+			sourceTree = "<group>";
+		};
+		D45412791E84C5B0002B8D46 /* IpaynowPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				D454127A1E84C5B0002B8D46 /* ipaynow.bundle */,
+				D454127B1E84C5B0002B8D46 /* IpaynowPluginApi.h */,
+				D454127C1E84C5B0002B8D46 /* IpaynowPluginDelegate.h */,
+				D454127D1E84C5B0002B8D46 /* IPNDESUtil.h */,
+				D454127E1E84C5B0002B8D46 /* IPNPreSignMessageUtil.h */,
+				D454127F1E84C5B0002B8D46 /* libIPaynowPlugin.a */,
+			);
+			path = IpaynowPlugin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D454125C1E84C49E002B8D46 /* Ipaynow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D45412661E84C49E002B8D46 /* Build configuration list for PBXNativeTarget "Ipaynow" */;
+			buildPhases = (
+				D45412591E84C49E002B8D46 /* Sources */,
+				D454125A1E84C49E002B8D46 /* Frameworks */,
+				D454125B1E84C49E002B8D46 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ipaynow;
+			productName = Ipaynow;
+			productReference = D454125D1E84C49E002B8D46 /* libIpaynow.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D45412551E84C49E002B8D46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = cn.com.jiuqi;
+				TargetAttributes = {
+					D454125C1E84C49E002B8D46 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D45412581E84C49E002B8D46 /* Build configuration list for PBXProject "Ipaynow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D45412541E84C49E002B8D46;
+			productRefGroup = D454125E1E84C49E002B8D46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D454125C1E84C49E002B8D46 /* Ipaynow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D45412591E84C49E002B8D46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D45412621E84C49E002B8D46 /* Ipaynow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D45412641E84C49E002B8D46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D45412651E84C49E002B8D46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D45412671E84C49E002B8D46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D45412681E84C49E002B8D46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D45412581E84C49E002B8D46 /* Build configuration list for PBXProject "Ipaynow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45412641E84C49E002B8D46 /* Debug */,
+				D45412651E84C49E002B8D46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D45412661E84C49E002B8D46 /* Build configuration list for PBXNativeTarget "Ipaynow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D45412671E84C49E002B8D46 /* Debug */,
+				D45412681E84C49E002B8D46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D45412551E84C49E002B8D46 /* Project object */;
+}
