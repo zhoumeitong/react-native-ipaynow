@@ -28,7 +28,7 @@ https://payment2.ipaynow.cn/centerForDeveloper/mobileDocument?terminalId=02
 
 
 2、环境配置
-在Xcode中，选择你的工程设置项，选中“TARGETS”一栏，在“info”标签栏的“URL type“添加“URL scheme”为你所注册的应用程序id
+在Xcode中，选择你的工程设置项，选中“TARGETS”一栏，在“info”标签栏的“URL type“添加“URL scheme”为自定义URL Scheme
 
 ![](http://upload-images.jianshu.io/upload_images/2093433-08847026986ac434.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -39,20 +39,7 @@ bitcode设置为NO
 
 ![](http://upload-images.jianshu.io/upload_images/2093433-aa43031b42658041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
-三、配置plist文件
-
-iOS9为了增强数据访问安全，将所有的http请求都改为了https，为了能够在iOS9中正常使用地图SDK，请在"Info.plist"中进行如下配置，否则影响SDK的使用。
-```
-<key>NSAppTransportSecurity</key>
-<dict>
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-</dict>
-
-```
-
-四、简单使用
+ 三、简单使用
 
 1、重写AppDelegate的openURL方法：
 ```
@@ -88,6 +75,7 @@ function show(title, msg) {
 }
 
 let md5 = 'mhtSignType=MD5&mhtSignature=d866ed04e7568254b94a75c8c586fcfa';
+let scheme = 'ipaynow';
 
 import {
   AppRegistry,
@@ -103,6 +91,10 @@ import {
 
 class TextReactNative extends Component {
 
+    componentDidMount() {
+        
+    }
+    
     getPresignStr() {
         Ipaynow.getPresignStr({
             'appId': '1408709961320306',
@@ -121,7 +113,7 @@ class TextReactNative extends Component {
 
 
     pay() {
-      Ipaynow.pay(md5)
+      Ipaynow.pay(md5,scheme)
        .then(result => {
       console.log("result is ", result);
       show("result is ", result);
@@ -184,3 +176,6 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('test', () => TextReactNative);
 
 ```
+
+现在支付文档链接：
+https://payment2.ipaynow.cn/centerForDeveloper/mobileDocument?terminalId=02

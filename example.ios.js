@@ -8,6 +8,7 @@ function show(title, msg) {
 }
 
 let md5 = 'mhtSignType=MD5&mhtSignature=d866ed04e7568254b94a75c8c586fcfa';
+let scheme = 'ipaynow';
 
 import {
   AppRegistry,
@@ -23,9 +24,6 @@ import {
 
 class TextReactNative extends Component {
 
-    componentDidMount() {
-        
-    }
     
     getPresignStr() {
         Ipaynow.getPresignStr({
@@ -45,7 +43,7 @@ class TextReactNative extends Component {
 
 
     pay() {
-      Ipaynow.pay(md5)
+      Ipaynow.pay(md5,scheme)
        .then(result => {
       console.log("result is ", result);
       show("result is ", result);

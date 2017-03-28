@@ -53,7 +53,7 @@ RCT_EXPORT_METHOD(getPresignStr:(NSDictionary *)dict
 }
 
 
-RCT_EXPORT_METHOD(pay:(NSString *)md5 resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXPORT_METHOD(pay:(NSString *)md5 Scheme:(NSString *)scheme resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     
     NSString *payData = [_presignStr stringByAppendingFormat:@"&%@",md5];
@@ -63,8 +63,7 @@ RCT_EXPORT_METHOD(pay:(NSString *)md5 resolver:(RCTPromiseResolveBlock)resolve r
     _resolve = resolve;
     _reject = reject;
     
-    [IpaynowPluginApi pay:payData AndScheme:@"ipaynow" viewController:root delegate:self];
-    
+    [IpaynowPluginApi pay:payData AndScheme:scheme viewController:root delegate:self];
     
 }
 
