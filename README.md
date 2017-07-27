@@ -14,6 +14,7 @@
 3、点击你的主工程文件，选择Build Phases，然后把刚才所添加进去的.xcodeproj下的Products文件夹中的静态库文件（.a文件），拖到Link Binary With Libraries组内。
 
 4、由于AppDelegate中使用Ipaynow库,所以我们需要打开你的工程文件，选择Build Settings，然后搜索Header Search Paths，然后添加库所在的目录。
+![](http://upload-images.jianshu.io/upload_images/2093433-315a64abda233512.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 二、开发环境配置
@@ -39,27 +40,27 @@ bitcode设置为NO
 
 ![](http://upload-images.jianshu.io/upload_images/2093433-aa43031b42658041.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
- 三、简单使用
+三、简单使用
 
 1、重写AppDelegate的openURL方法：
 ```
 #import "IpaynowPluginApi.h"
 
 - (void)applicationWillEnterForeground:(UIApplication *)application{
-    [IpaynowPluginApi willEnterForeground];
+   [IpaynowPluginApi willEnterForeground];
 }
 
 //iOS9之后使用
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
-    
-    NSString *sourceApplication = options[@"UIApplicationOpenURLOptionSourceApplicationKey"];
-    
-    return [IpaynowPluginApi application:app openURL:url sourceApplication:sourceApplication annotation: [[NSNull alloc]init]];
+
+NSString *sourceApplication = options[@"UIApplicationOpenURLOptionSourceApplicationKey"];
+
+   return [IpaynowPluginApi application:app openURL:url sourceApplication:sourceApplication annotation: [[NSNull alloc]init]];
 }
 
 //iOS9之前使用
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return  [IpaynowPluginApi application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+   return  [IpaynowPluginApi application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 ```
@@ -71,111 +72,114 @@ import React, { Component } from 'react';
 import Ipaynow from 'react-native-ipaynow';
 
 function show(title, msg) {
-    Alert.alert(title+'', msg+'');
+Alert.alert(title+'', msg+'');
 }
 
 let md5 = 'mhtSignType=MD5&mhtSignature=d866ed04e7568254b94a75c8c586fcfa';
 let scheme = 'ipaynow';
 
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Dimensions,
-  Alert,
-  ScrollView,
-  TouchableHighlight,
-  NativeAppEventEmitter
+AppRegistry,
+StyleSheet,
+Text,
+View,
+Dimensions,
+Alert,
+ScrollView,
+TouchableHighlight,
+NativeAppEventEmitter
 } from 'react-native';
 
 class TextReactNative extends Component {
 
-    componentDidMount() {
-        
-    }
-    
-    getPresignStr() {
-        Ipaynow.getPresignStr({
-            'appId': '1408709961320306',
-            'consumerId': 'IPN00001',
-            'consumerName': 'IPaynow',
-            'mhtOrderName': 'IOS插件测试用例',
-            'mhtOrderAmt':'10',
-            'mhtOrderDetail': '关于订单验证接口的测试',
-            'notifyUrl': 'http://localhost:10802/',
-            'payChannelType':'12',
-        },(res) => {
-            show('getPresignStr', res);
-        });
-        
-    }
+componentDidMount() {
+
+}
+
+getPresignStr() {
+Ipaynow.getPresignStr({
+'appId': '1408709961320306',
+'consumerId': 'IPN00001',
+'consumerName': 'IPaynow',
+'mhtOrderName': 'IOS插件测试用例',
+'mhtOrderAmt':'10',
+'mhtOrderDetail': '关于订单验证接口的测试',
+'notifyUrl': 'http://localhost:10802/',
+'payChannelType':'12',
+},(res) => {
+show('getPresignStr', res);
+});
+
+}
 
 
-    pay() {
-      Ipaynow.pay(md5,scheme)
-       .then(result => {
-      console.log("result is ", result);
-      show("result is ", result);
-      })
-       .catch(error => {
-      console.log(error);
-      show(error);
-      });
-    }
+pay() {
+Ipaynow.pay(md5,scheme)
+.then(result => {
+console.log("result is ", result);
+show("result is ", result);
+})
+.catch(error => {
+console.log(error);
+show(error);
+});
+}
 
 
-    render() {
-        return (
-            <ScrollView contentContainerStyle={styles.wrapper}>
+render() {
+return (
+<ScrollView contentContainerStyle={styles.wrapper}>
 
-                <Text style={styles.pageTitle}>Ipaynow SDK for React Native (iOS)</Text>
+<Text style={styles.pageTitle}>Ipaynow SDK for React Native (iOS)</Text>
 
-                <TouchableHighlight 
-                    style={styles.button} underlayColor="#f38"
-                    onPress={this.getPresignStr}>
-                    <Text style={styles.buttonTitle}>getPresignStr</Text>
-                </TouchableHighlight>
+<TouchableHighlight 
+style={styles.button} underlayColor="#f38"
+onPress={this.getPresignStr}>
+<Text style={styles.buttonTitle}>getPresignStr</Text>
+</TouchableHighlight>
 
-                <TouchableHighlight 
-                    style={styles.button} underlayColor="#f38"
-                    onPress={this.pay}>
-                    <Text style={styles.buttonTitle}>pay</Text>
-                </TouchableHighlight>
+<TouchableHighlight 
+style={styles.button} underlayColor="#f38"
+onPress={this.pay}>
+<Text style={styles.buttonTitle}>pay</Text>
+</TouchableHighlight>
 
-            </ScrollView>
-        );
-    }
+</ScrollView>
+);
+}
 }
 
 const styles = StyleSheet.create({
-  wrapper: {
-        paddingTop: 60,
-        paddingBottom: 20,
-        alignItems: 'center',
-    },
-    pageTitle: {
-        paddingBottom: 40
-    },
-    button: {
-        width: 200,
-        height: 40,
-        marginBottom: 10,
-        borderRadius: 6,
-        backgroundColor: '#f38',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    buttonTitle: {
-        fontSize: 16,
-        color: '#fff'
-    }
+wrapper: {
+paddingTop: 60,
+paddingBottom: 20,
+alignItems: 'center',
+},
+pageTitle: {
+paddingBottom: 40
+},
+button: {
+width: 200,
+height: 40,
+marginBottom: 10,
+borderRadius: 6,
+backgroundColor: '#f38',
+alignItems: 'center',
+justifyContent: 'center',
+},
+buttonTitle: {
+fontSize: 16,
+color: '#fff'
+}
 
 });
 
 AppRegistry.registerComponent('test', () => TextReactNative);
 
 ```
+
+github链接：
+https://github.com/zhoumeitong/react-native-ipaynow
 
 现在支付文档链接：
 https://payment2.ipaynow.cn/centerForDeveloper/mobileDocument?terminalId=02
