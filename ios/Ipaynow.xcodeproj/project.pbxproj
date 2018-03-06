@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F491C9A204D4A0E00B06646 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45412781E84C5A6002B8D46 /* AlipaySDK.framework */; };
+		4F491C9B204D4A2700B06646 /* libIPaynowPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D454127F1E84C5B0002B8D46 /* libIPaynowPlugin.a */; };
 		D45412621E84C49E002B8D46 /* Ipaynow.m in Sources */ = {isa = PBXBuildFile; fileRef = D45412611E84C49E002B8D46 /* Ipaynow.m */; };
-		D45412631E84C49E002B8D46 /* Ipaynow.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D45412601E84C49E002B8D46 /* Ipaynow.h */; };
+		D45412631E84C49E002B8D46 /* Ipaynow.h in Copy Files */ = {isa = PBXBuildFile; fileRef = D45412601E84C49E002B8D46 /* Ipaynow.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D454125B1E84C49E002B8D46 /* CopyFiles */ = {
+		D454125B1E84C49E002B8D46 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				D45412631E84C49E002B8D46 /* Ipaynow.h in CopyFiles */,
+				D45412631E84C49E002B8D46 /* Ipaynow.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -43,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F491C9B204D4A2700B06646 /* libIPaynowPlugin.a in Frameworks */,
+				4F491C9A204D4A0E00B06646 /* AlipaySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +112,7 @@
 			buildPhases = (
 				D45412591E84C49E002B8D46 /* Sources */,
 				D454125A1E84C49E002B8D46 /* Frameworks */,
-				D454125B1E84C49E002B8D46 /* CopyFiles */,
+				D454125B1E84C49E002B8D46 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -253,7 +258,15 @@
 		D45412671E84C49E002B8D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ipaynow/AliPayPlugin",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ipaynow/IpaynowPlugin",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -262,7 +275,15 @@
 		D45412681E84C49E002B8D46 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ipaynow/AliPayPlugin",
+				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../react-native/React/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Ipaynow/IpaynowPlugin",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
