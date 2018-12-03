@@ -56,14 +56,21 @@ RCT_EXPORT_METHOD(getPresignStr:(NSDictionary *)dict
 RCT_EXPORT_METHOD(pay:(NSString *)md5 Scheme:(NSString *)scheme resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
     
-    NSString *payData = [_presignStr stringByAppendingFormat:@"&%@",md5];
-    
-    UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
-    
-    _resolve = resolve;
-    _reject = reject;
-    
-    [IpaynowPluginApi pay:payData AndScheme:scheme viewController:root delegate:self];
+    NSOperationQueue *waitQueue = [[NSOperationQueue alloc] init];
+    [waitQueue addOperationWithBlock:^{
+        [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+        // 同步到主线程
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString *payData = [_presignStr stringByAppendingFormat:@"&%@",md5];
+            
+            UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+            
+            _resolve = resolve;
+            _reject = reject;
+            
+            [IpaynowPluginApi pay:payData AndScheme:scheme viewController:root delegate:self];
+        });
+    }];
     
 }
 
